@@ -1,7 +1,7 @@
 
 demo:  http://dev.org.org/securestream
 
-This is for securely streaming audio (or other) files over http (Not allowing the user download the file).
+Prevent a streaming audio (or other media) file from being downloaded by user.
 
 Basic rundown of process:
 
@@ -31,9 +31,10 @@ with the timestamp and file name, create a corresponding link with a timestamp i
 future, click the player and load the link within 2 seconds of clicking.
 
 *********Future development*********
-I would like to be able to add a multiple track playlist, but I ran into problems with
-the timestamp.  FlowPlayer seems to get the timestamp once,  and use it for any future
-calls.  This, of course, causes issues with the 2 second time limit on downloading the file.
+I would like to be able to add a multiple track playlist, but I ran into problems
+with the timestamp.  FlowPlayer seems to get the timestamp once,  and use it for
+any future calls.  This, of course, causes issues with the 2 second time limit on
+downloading the file.
 ************************************
 
 sources:

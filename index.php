@@ -53,7 +53,7 @@
         <p><a href="https://github.com/rantastic/Secure-http-streaming-with-FlowPlayer"><img src="../img/github_white_black_cat_32.png" alt""/></a><a id="dl" href="https://github.com/rantastic/Secure-http-streaming-with-FlowPlayer">Download On Github</a></p>
         <br class="clear"/>
         
-        <p>This is for securely streaming audio (or other) files over http (Not allowing the user download the file).</p>
+        <p>Prevent a streaming audio (or other media) file from being downloaded by user.</p>
     
         <h3>Basic rundown of process:</h3>
         

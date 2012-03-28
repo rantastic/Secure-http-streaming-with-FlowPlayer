@@ -1,4 +1,6 @@
 
+demo:  http://dev.org.org/securestream
+
 This is for securely streaming audio (or other) files over http (Not allowing the user download the file).
 
 Basic rundown of process:
@@ -20,8 +22,8 @@ Basic rundown of process:
   current time is within 2 seconds of the timestamp (This makes it so the
   user can't just grab the link that was called from the network requests and
   use it later).  If everything checks out, the audio.php loads the file with
-  the correct audio/mpeg headers, otherwise it redirects to the secure root which will
-  show a forbidden error message.
+  the correct audio/mpeg headers, otherwise it redirects to the secure root which
+  will show a forbidden error message.
   
 The only way a user could theoretically download the file is if the knew the token
 used (which is why its best to compile your own).  Figure out how the token is salted 

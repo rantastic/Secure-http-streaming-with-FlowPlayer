@@ -1,0 +1,39 @@
+
+This is for securely streaming audio (or other) files over http (Not allowing the user download the file).
+
+Basic rundown of process:
+
+- User clicks play
+
+- The flowplayer calls the mp3 file from a link structured like this:
+
+  - http://yourdomain.com/secure/SECURITYHASH/TIMESTAMP/musicfile.mp3
+    The security hash is a md5 of Token/MusicfileTimestamp.
+    The token is a security keyphrase that can be compiled into Flowplayer.
+    If none is compiled in, a default token provided by FlowPlayer is used.
+    
+- The .htaccess grabs any request for the secure folder and turns the link into this:
+
+  - http://yourdomain.com/secure/audio.php?h=SECURITYHASH&t=TIMESTAMP&v=musicfile.mp3
+  
+- The audio.php file then checks that the hash is correct and that the
+  current time is within 2 seconds of the timestamp (This makes it so the
+  user can't just grab the link that was called from the network requests and
+  use it later).  If everything checks out, the audio.php loads the file with
+  the correct audio/mpeg headers, otherwise it redirects to the secure root which will
+  show a forbidden error message.
+  
+The only way a user could theoretically download the file is if the knew the token
+used (which is why its best to compile your own).  Figure out how the token is salted 
+with the timestamp and file name, create a corresponding link with a timestamp in the
+future, click the player and load the link within 2 seconds of clicking.
+
+*********Future development*********
+I would like to be able to add a multiple track playlist, but I ran into problems with
+the timestamp.  FlowPlayer seems to get the timestamp once,  and use it for any future
+calls.  This, of course, causes issues with the 2 second time limit on downloading the file.
+************************************
+
+sources:
+http://flowplayer.blacktrash.org/secure-http.html
+http://flowplayer.org/documentation/

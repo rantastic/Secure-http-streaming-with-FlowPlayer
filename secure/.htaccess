@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteRule ^(.*)/(.*)/(.*)$ audio.php?h=$1&t=$2&v=$3
+
+RewriteRule ^$ - [F]
+RewriteRule ^[^/]+\.(flv|mp3)$ - [F]
